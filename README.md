@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎓 Student Performance Predictor
 
-## Getting Started
+A modern full-stack web application that predicts a student's test score based on their study hours using a **Linear Regression** machine learning model.
 
-First, run the development server:
+![Project Preview](https://img.shields.io/badge/Machine_Learning-Linear_Regression-blue)
+![Backend](https://img.shields.io/badge/Backend-FastAPI-green)
+![Frontend](https://img.shields.io/badge/Frontend-Next.js-black)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Overview
+
+Ye project ek Simple Linear Regression model pr based hai jo predict krta hai ki user (student) kitne hours padhai krke kitna score achieve kr skta hai. Isme ek powerful FastAPI backend hai aur ek stunning Next.js frontend visualization ke liye.
+
+### **Features**
+- **Real-time Prediction:** Input hours and get instant score prediction.
+- **Machine Learning Integration:** Uses a pre-trained scikit-learn model.
+- **Interactive UI:** Built with Next.js and Tailwind CSS for a premium look.
+- **Data Visualization:** Score trends visual presentation (using Recharts).
+- **Responsive Design:** Optimized for all screen sizes.
+
+---
+
+## 🏗️ Project Structure
+
+```text
+LinearRegression/
+├── backend/            # Python FastAPI Server & ML Model
+│   ├── main.py         # API Endpoints
+│   ├── student_performance_predictor.joblib  # Trained Model
+│   └── requirements.txt # Python dependencies
+└── frontend/           # Next.js React Application
+    ├── src/            # Application logic and UI
+    └── package.json    # Node.js dependencies
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **ML Model:** Scikit-learn (Linear Regression)
+- **Backend:** FastAPI (Python)
+- **Frontend:** Next.js (TypeScript), Tailwind CSS, Lucide Icons, Recharts
+- **Deployment Ready:** Configured for local and production environments.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🚦 How to Run the Project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Follow these steps to get the project up and running locally.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 1. **Backend Setup**
+Navigate to the backend folder and set up a virtual environment.
 
-## Deploy on Vercel
+```bash
+cd backend
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+# Linux/Mac:
+source venv/bin/activate
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+pip install -r requirements.txt
+python main.py
+```
+*Backend will be running on: `http://localhost:8000`*
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 2. **Frontend Setup**
+Open a new terminal, navigate to the frontend folder.
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+*Frontend will be running on: `http://localhost:3000`*
+
+---
+
+## 🧠 How it Works?
+
+1. **User Input:** User enter krta hai number of study hours (e.g., 5.5 hours).
+2. **API Call:** Frontend se request backend API (`/predict`) pr jati hai.
+3. **Model Prediction:** Backend me load kiya gaya `Linear Regression` model input data ko process krta hai using the formula `Y = mX + c` (Score = Slope * Hours + Intercept).
+4. **Result:** Backend score return krta hai aur frontend use beautiful UI me display krta hai.
+
+---
+
+## 📝 Author
+Created with ❤️ by **Antigravity AI** for project demonstration.
